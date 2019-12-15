@@ -1,3 +1,71 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#gamewindow {
+  display: none;
+  padding: 30px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-color: lightgreen;
+  z-index: 4;
+  text-align: center;
+}
+
+#closeb {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+#dimmer {
+  position: fixed; 
+  display: none; 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+#dropdown {
+	list-style: none;
+  top:50%;
+  left: -145px;
+	position: absolute;
+  transition: left 1s;
+  cursor: pointer;
+
+}
+
+#dropdown li {
+	padding: 5px;
+	background-color: white;
+	font-family: Arial;
+	text-align: center;
+}
+
+#dropdown li:last-child {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  position: absolute;
+  left: 145px;
+  font-size: 1.5em;
+  top: 0;
+  background-color: lightslategray;
+}
+
+#dropdown li:not(:last-child) {
+  border: 1px solid red;
+  background-color: lightcoral;
+}
+
+
+
+
 nav {
     width: 100%;
     margin: auto;
@@ -21,7 +89,7 @@ h2 {
     margin: 0;
     padding: 0;    
     list-style-type: none;
-
+    display: inline;
 }
 
 .burgerMenuB {
@@ -54,9 +122,106 @@ h2 {
   }
 
 
-  @media screen and (min-width: 480px) {
+  .galcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .img {
+    max-width: 100%; 
+    max-height: 500px;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 0.5em;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .foot {
+    margin-top: 250px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #row {
+    flex: 25%;
+  }
+  @media screen and (min-width: 600px) {
     nav {
-        width: 80%;
+      display: block;
+      float: right;
+    }
+    
+    nav ul {
+      float: right;
     }
 
+    nav ul li {
+      display: inline-block;
+      background-color: white;
+    }
+
+    .burgerMenuB {
+      display: none;
+    }
+
+    .title {
+      padding: 10px;
+      font-size: 1em;
+
+    }
+
+    .galcontent {
+      flex-direction: column;
+    }
+
+    .group {
+      display: flex;
+      flex-direction: row;
+    }
+    body {
+      padding: 10px;
+    }
+
+  }
+
+  @media screen and (min-width: 1000px) {
+    .group {
+      flex-direction: row;
+    }
+
+    .galcontent {
+      flex-direction: row;
+    }
+    
+    .title {
+      padding: 10px;
+      font-size: 1em;
+
+    }
   }

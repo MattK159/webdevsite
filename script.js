@@ -1,10 +1,66 @@
 
+var menub = document.getElementById('menub'); 
+var cardb = document.getElementById('cardgame'); 
+var closeb = document.getElementById('closeb'); 
+var displaygamemenu = 0; 
+menub.addEventListener("click", displayMenu); 
+cardb.addEventListener('click', playgame); 
+closeb.addEventListener('click',exitgame); 
 
+console.log("Script running"); 
+var menu = 0; 
+function myFunction(x) {
+    x.classList.toggle("change");
+    if(menu == 0) {
+        document.getElementById('nav').style.display = "inline-block"; 
+        menu = 1; 
+    }
+    else {
+        document.getElementById('nav').style.display = "none"; 
+        menu = 0;
+    }
+  }
 
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
+async function backflicker() {
+    console.log("Changing back colourr"); 
+    menub.style.bacgkround = "rgb(255,0,0)"; 
+    await sleep(1000);
+    menub.style.bacgkround = "rgb(255,255,255)"; 
+    console.log("Done"); 
+}
 
+function displayMenu() {
+    console.log("Clicked menu");
+    if(displaygamemenu == 1) {
+        console.log("Hiding menu"); 
+        document.getElementById("dropdown").style.left = "-145px"; 
+        backflicker(); 
+        displaygamemenu = 0; 
+    }
+    else {
+        console.log("Showing menu"); 
+        document.getElementById("dropdown").style.left = "-40px";
+        document.getElementById('dimmer').style.background = "rgba(0, 0, 0, 0.5)";
+ 
+        displaygamemenu = 1; 
+    }
+}
 
+function exitgame() {
+    document.getElementById("dimmer").style.display = "none";
+    document.getElementById("gamewindow").style.display = "none";
+    document.getElementById('title').innerHTML = ""; 
+}
 
+function playgame() {
+    document.getElementById("dimmer").style.display = "block";
+    document.getElementById("gamewindow").style.display = "block";
+    document.getElementById('title').innerHTML = "Card Game"; 
+}
 
 
 
