@@ -6,6 +6,8 @@ body {
   display: none;
   padding: 30px;
   position: absolute;
+  width: 300px;
+  height: 300px;
   top: 40%;
   left: 40%;
   background-color: lightgreen;
@@ -13,7 +15,33 @@ body {
   text-align: center;
 }
 
+#title {
+  display: block;
+}
+#card1  {
+  width: 100px;
+  height: 150px;
+  display: inline-block;
+}
+
+#card2  {
+  width: 100px;
+  height: 150px;
+}
+
 #closeb {
+  background-color: lightgrey;
+  display: block;
+  cursor: pointer;
+}
+
+#drawb {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+#resetb {
+  display: none; 
   background-color: lightgrey;
   cursor: pointer;
 }
@@ -52,7 +80,7 @@ body {
   writing-mode: vertical-lr;
   text-orientation: mixed;
   position: absolute;
-  left: 145px;
+  left: 135px;
   font-size: 1.5em;
   top: 0;
   background-color: lightslategray;
@@ -62,9 +90,6 @@ body {
   border: 1px solid red;
   background-color: lightcoral;
 }
-
-
-
 
 nav {
     width: 100%;
@@ -211,6 +236,9 @@ h2 {
   }
 
   @media screen and (min-width: 1000px) {
+    nav {
+      display: block;
+    }
     .group {
       flex-direction: row;
     }
@@ -222,6 +250,5 @@ h2 {
     .title {
       padding: 10px;
       font-size: 1em;
-
     }
   }
